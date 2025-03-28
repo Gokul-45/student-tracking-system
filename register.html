@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="heading">MEC Student Tracking System</h1>
+        <h2 class="form-title" id="registerTitle">Register Here</h2>
+        <div class="form-container">
+            <form action="#" method="post">
+                <div class="field">
+                    <label for="fullName">Full Name:</label>
+                    <input type="text" class="input" id="fullName" name="fullName" required>
+                </div>
+                <div class="field">
+                    <label id="idLabel" for="regNo">Registration No:</label>
+                    <input type="text" class="input" id="regNo" name="regNo" required>
+                </div>
+                <div class="field">
+                    <label for="department">Department:</label>
+                    <input list="departments" class="input" id="department" name="department" required>
+                    <datalist id="departments">
+                        <option value="CSE"></option>
+                        <option value="IT"></option>
+                        <option value="ECE"></option>
+                        <option value="EEE"></option>
+                        <option value="MECH"></option>
+                        <option value="AIDS"></option>
+                        <option value="CSBS"></option>
+                    </datalist>
+                </div>
+                <div class="field">
+                    <label for="password">Password:</label>
+                    <input type="password" class="input" id="password" name="password" required>
+                </div>
+                <div class="field">
+                    <label for="confirmPassword">Confirm Password:</label>
+                    <input type="password" class="input" id="confirmPassword" name="confirmPassword" required>
+                </div>
+                <div class="field">
+                    <label for="mobileNumber">Mobile Number:</label>
+                    <input type="text" class="input" id="mobileNumber" name="mobileNumber" required>
+                </div>
+                <div class="field">
+                    <label for="email">Email:</label>
+                    <input type="email" class="input" id="email" name="email" required>
+                </div>
+                <button type="submit" class="login-button">Register</button>
+                <div class="register-text">
+                    <p>Already have an account? <a href="login.html" class="link">Login Here</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const isAdmin = urlParams.get('admin') === 'true';
+        const idLabel = document.getElementById('idLabel');
+        idLabel.innerText = isAdmin ? 'Admin ID:' : 'Registration No:';
+    </script>
+</body>
+</html>
